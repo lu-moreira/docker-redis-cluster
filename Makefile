@@ -5,7 +5,7 @@ help:
 	@echo "  down          stops the running docker-compose containers"
 	@echo "  rebuild       rebuilds the image from scratch without using any cached layers"
 	@echo "  bash          starts bash inside a running container."
-	@echo "  cli           run redis-cli inside the container on the server with port 7000"
+	@echo "  cli           run redis-cli inside the container on the server with port 9000"
 
 build:
 	docker-compose build
@@ -23,4 +23,4 @@ bash:
 	docker-compose exec redis-cluster /bin/bash
 
 cli:
-	docker-compose exec redis-cluster /redis/src/redis-cli -p 7000
+	docker-compose exec redis-cluster /redis/src/redis-cli -p 9000

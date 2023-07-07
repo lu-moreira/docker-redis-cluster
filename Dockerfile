@@ -1,5 +1,5 @@
-# Build based on redis:6.0 from 2020-05-05
-FROM redis@sha256:f7ee67d8d9050357a6ea362e2a7e8b65a6823d9b612bc430d057416788ef6df9
+# Build based on latest redis-stack
+FROM redis/redis-stack:latest
 
 LABEL maintainer="Johan Andersson <Grokzen@gmail.com>"
 
@@ -46,7 +46,7 @@ COPY generate-supervisor-conf.sh /generate-supervisor-conf.sh
 
 RUN chmod 755 /docker-entrypoint.sh
 
-EXPOSE 7000 7001 7002 7003 7004 7005 7006 7007 5000 5001 5002
+EXPOSE 9000 9001 9002 9003 9004 9005 9006 9007 5020 5021 5022
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["redis-cluster"]
